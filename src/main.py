@@ -2,7 +2,13 @@ import markdown.extensions.fenced_code
 import pandas as pd
 import random as rd
 
-df = pd.read_csv('.recipes.csv')
+df = pd.read_csv('recipes.csv')
+
+ing_list=[]
+for row in df.ingredients:
+    ing_list+=row
+ing_list = list(set(ing_list))
+ing_list.sort()
 
 def restrict(df, *args):
     '''
@@ -24,7 +30,7 @@ def restrict(df, *args):
     elif len(args)==5:
         return df[(~df[ args[0] ]) & (~df[ args[1] ]) & (~df[ args[2] ]) & (~df[ args[3] ]) & (~df[ args[4] ])].reset_index(drop=True)
 
-def realfooder(df, *args):
+def realfooder(df, ing_list, *args):
     '''
     This function selects your favourite ingredients and returns a filtered df by those ingredients only
     '''
@@ -39,7 +45,7 @@ def realfooder(df, *args):
                 break
     return df[df.id.isin(ok)].reset_index(drop=True)
 
-def picky_eater(df, *args):
+def picky_eater(df, ing_list, *args):
     '''
     This function excludes your loathed ingredients and returns a filtered df excluding those ingredients
     '''
