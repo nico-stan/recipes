@@ -4,7 +4,7 @@
 By: Nicolas Stambolsky
 Date: September, 2nd 2022
 
-![Screenshot](https://github.com/nico-stan/Project-IV/blob/main/images/waving_eagle.gif)
+![Screenshot](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2F39hvy4FM5au6JXeXOu%2Fgiphy.gif&imgrefurl=https%3A%2F%2Fgiphy.com%2Fexplore%2Fcooking-recipe&tbnid=F7RlO0T-Qk51PM&vet=12ahUKEwi22PjG5_H5AhUIlBoKHXOTB1AQMygEegUIARCaAg..i&docid=OiM-YINq6vFs2M&w=480&h=270&q=recipes%20gif&ved=2ahUKEwi22PjG5_H5AhUIlBoKHXOTB1AQMygEegUIARCaAg)
 ________________________________________________
 
 ## 2 - Endpoint route for generating a Random Number:
