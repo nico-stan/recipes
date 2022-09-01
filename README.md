@@ -15,7 +15,7 @@ Have you ever felt like cooking but not had the creativity to come up with uniqu
 ## Methodology
 I have selected a recipes dataset from [Kaggle](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions) that was scrapped from [food.com](https://www.food.com/) of recipes gathered in English mostly in the US.
 
-This dataset included over 200,000 recipes of different kind of foods. I selected only main dishes and created new columns to better filter by user preferences. This lead to a clean dataset `recipes.csv` to work with.
+This dataset included over 200,000 recipes of different kind of foods. I selected only main dishes and created new columns to better filter by user preferences. This leads to a clean dataset `recipes.csv` to work with.
 
 With this dataset I wanted to create the following tweaks:
 - Filter by one or more food restrictions: Dairy-Free, Gluten-Free, Nut-Free, Vegan, Vegetarian
@@ -36,11 +36,11 @@ Here is what the results look like through the local version of this page:
 
 ![Local (working) version](https://github.com/nico-stan/recipes/blob/main/images/2.png)
 
-In addition to this, there was a mapping function integrated in the pupyter notebook which allows the user to see the nearest Grocery Stores, within a 10 km radius grouped by walking distance up to 3km. This way, the user gets the recipes that they need, the shop list to buy the ingredients and the nearest Grocery Stores in the area.
+In addition to this, there was a mapping function integrated in the jupyter notebook which allows the user to see the nearest Grocery Stores, within a 10 km radius grouped by walking distance up to 3km. This way, the user gets the recipes that they need, the shop list to buy the ingredients and the nearest Grocery Stores in the area.
 
 ![Map](https://github.com/nico-stan/recipes/blob/main/images/Map.png)
 
-Furthermore, two graphs were developed to show the whole pipeline process that depicts how many recipes are 'lost' in the way. 
+Furthermore, two graphs were developed to show the whole funnel process that depicts how many recipes are 'lost' in the way. 
 ![](https://github.com/nico-stan/recipes/blob/main/images/Pipeline.png)
 
 And one that shows how restrictive each food restriction is, by showing the total amount of recipes available.
@@ -51,10 +51,10 @@ Notice that there were many hurdles during the development of this tool, some of
 
 ## Further Development
 There are multiple ways in which this project can be expanded upon, which include but are not limited to:
-- Solving the max size upload restriction on github to run Streamlit not locally.
+- Solving the max size upload restriction on Github to run Streamlit not locally.
 - Fixing minor details of the Realfooder and Picky Eater functions in `streamlit.py`
-- Include more food restrictions as keto-diet, low-carb, duncan, etc.
-- Quantity scraping from [food.com](https://www.food.com/) to include a new column in the df with quantities.
+- Include more food restrictions as keto-diet, low-carb, Duncan, etc.
+- Quantity scraping from [food.com](https://www.food.com/) to include a new column in the dataframe with quantities.
 - Price and quantity Scraping from local stores to estimate the cart price based on the ingredients list.
 - Save the queries, so that a prediction can be determined based on User Preferences after a couple of searches.
 - Both translate the dataset and complement it with local foods so that the user can select available recipes based on location and not just heavily US-based recipes.
