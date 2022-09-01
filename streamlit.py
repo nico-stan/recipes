@@ -100,7 +100,7 @@ st.write("You have selected: ", n_recipes, "recipes with a max cooking time of "
 
 # Show the df final and shop_list
 
-st.subheader("Time management")
+st.subheader("Recipes and Shop List")
 df_chosen = df4.filter(items = pick, axis=0).reset_index(drop=True)
 df_final = df_chosen[['name','description', 'minutes', 'ingredients', 'steps', 'restrictions', 'url' ]]
 st.write("Here are your recipes:")
