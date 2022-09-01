@@ -30,14 +30,19 @@ This project was initially developed in the queries jupyter notebook and most of
 The public (work in progress) version of this tool can be found through this link in [Streamlit](https://nico-stan-recipes-streamlitstreamlit-rv1vwn.streamlitapp.com/) 
 
 Here is what the results look like through the local version of this page:
-[Local (working) version]()
+![Local (working) version](https://github.com/nico-stan/recipes/blob/main/images/1.png)
 
-[Local (working) version]()
+![Local (working) version](https://github.com/nico-stan/recipes/blob/main/images/2.png)
 
 In addition to this, there was a mapping function integrated in the pupyter notebook which allows the user to see the nearest Grocery Stores, within a 10 km radius grouped by walking distance up to 3km. This way, the user gets the recipes that they need, the shop list to buy the ingredients and the nearest Grocery Stores in the area.
 
-[Map]()
+![Map](https://github.com/nico-stan/recipes/blob/main/images/Map.png)
 
+Furthermore, two graphs were developed to show the whole pipeline process that depicts how many recipes are 'lost' in the way. 
+![](https://github.com/nico-stan/recipes/blob/main/images/Pipeline.png)
+
+And one that shows how restrictive each food restriction is, by showing the total amount of recipes available.
+![](https://github.com/nico-stan/recipes/blob/main/images/Restrictions.png)
 
 ## Limitations
 Notice that there were many hurdles during the development of this tool, some of which are explained in the EDA notebook. However, there are some issues that still remain to date, the main one regarding the inability to upload of the recipes.csv due to size which hampers the ability to use this tool if not run locally. Also, there are some technical problems regarding the Realfooder and Picky Eater functions in Streamlit, which would allow to select the desired/undesired ingredients from the dataset, even if it works perfectly fine in the `queries.ipynb`.
