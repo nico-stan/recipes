@@ -8,7 +8,7 @@ Date: September, 2nd 2022
 ________________________________________________
 
 ## Summary
-Have you ever felt like cooking but not had the creativity to come up with unique recipes? Then this tool is meant for you. The idea is to select a few custom parameters from a recipe database and generate the recipes for you, as well as the shopping list so that you can cook without coming up with the recipes. 
+Have you ever felt like cooking but not had the creativity to come up with unique recipes? Then this tool is meant for you. The aim of this project is to select a few custom parameters from a recipe database and generate the recipes for the user, as well as the shopping list so that you can cook without coming up with the recipes. 
 
 ## Methodology
 I have selected a recipes dataset from [Kaggle](https://www.kaggle.com/datasets/shuyangli94/food-com-recipes-and-user-interactions) that was scrapped from [food.com](https://www.food.com/) of recipes gathered in English mostly in the US.
