@@ -5,7 +5,8 @@ By: Nicolas Stambolsky
 Date: September, 2nd 2022
 <p align="center">
 <img src="https://media1.giphy.com/media/39hvy4FM5au6JXeXOu/giphy.gif"
-</p>
+</p>  
+
 ________________________________________________
 
 ## Summary
