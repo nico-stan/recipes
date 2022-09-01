@@ -8,5 +8,4 @@ Date: September, 2nd 2022
 ________________________________________________
 
 ## Summary
-Have you ever felt like cooking but not had the creativity to come up with unique recipes? Then this tool is meant for you.
-The idea
+Have you ever felt like cooking but not had the creativity to come up with unique recipes? Then this tool is meant for you. The idea is to select a few custom parameters from a recipe database and generate the recipes for you, as well as the shopping list so that you can cook without coming up with the recipes. 
