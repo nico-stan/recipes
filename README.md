@@ -44,10 +44,15 @@ Furthermore, two graphs were developed to show the whole pipeline process that d
 And one that shows how restrictive each food restriction is, by showing the total amount of recipes available.
 ![](https://github.com/nico-stan/recipes/blob/main/images/Restrictions.png)
 
-## Limitations
+## Limitations
 Notice that there were many hurdles during the development of this tool, some of which are explained in the EDA notebook. However, there are some issues that still remain to date, the main one regarding the inability to upload of the recipes.csv due to size which hampers the ability to use this tool if not run locally. Also, there are some technical problems regarding the Realfooder and Picky Eater functions in Streamlit, which would allow to select the desired/undesired ingredients from the dataset, even if it works perfectly fine in the `queries.ipynb`.
 
-## Further Development
+## Further Development
 There are multiple ways in which this project can be expanded upon, which include but are not limited to:
 - Solving the max size upload restriction on github to run Streamlit not locally.
 - Fixing minor details of the Realfooder and Picky Eater functions in `streamlit.py`
+- Include more food restrictions as keto-diet, low-carb, duncan, etc.
+- Quantity scraping from [food.com](https://www.food.com/) to include a new column in the df with quantities.
+- Price and quantity Scraping from local stores to estimate the cart price based on the ingredients list.
+- Save the queries, so that a prediction can be determined based on User Preferences after a couple of searches.
+- Both translate the dataset and complement it with local foods so that the user can select available recipes based on location and not just heavily US-based recipes.
