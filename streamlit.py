@@ -5,6 +5,8 @@ import warnings                # Makes it readable without 'errors'
 warnings.filterwarnings("ignore")
 from src.recipes import * #Functions to filter the df
 import streamlit as st # Create and populate a website
+import inflect
+p = inflect.engine()
 
 st.set_page_config(page_title="Recipe Generator", page_icon="🥗", layout='centered', initial_sidebar_state='auto')
 
@@ -86,7 +88,7 @@ t_max = st.slider('What is the maximum time (in min) you want to spend for a rec
 df3 = df2[df2.minutes <= t_max].reset_index(drop=True)
 n_steps = st.slider('What is the maximum number of steps you want to have for a recipe?', 30, 0)
 df4 = df3[df3.n_steps <= n_steps].reset_index(drop=True)
-n_recipes = st.slider('How many recipes do you want?', 30, 0)
+n_recipes = st.slider('How many recipes do you want?', 1, 30)
 pick = n_of_recipes(len(df4), n_recipes)
 pick = [n-1 for n in pick]
 
@@ -106,18 +108,35 @@ for row in df_chosen.ingredients:
     shop_list+=row
 shop_list = list(set(shop_list))
 shop_list.sort()
-st.write("Here is your shopping list with ", len(shop_list), "items:")
-st.write(shop_list)
+
+words=[]
+shop_list_def = []
+for item in shop_list:
+    for word in item.split(' '):
+        if p.singular_noun(word):
+            word = p.singular_noun(word)
+        if word not in words:
+            words.append(word)
+            shop_list_def.append(item)
+shop_list_def = list(set(shop_list_def))
+shop_list_def.sort()
+st.write("Here is your shopping list with ", len(shop_list_def), "items:")
+st.write(shop_list_def)
+if st.checkbox("Do you already have any of the mentioned ingredients?"):
+    stock = st.selectbox('Seleccione alimento:', shop_list_def)
+    shop_list_def.remove(stock)
+    st.write("You have removed ", stock, "from the shopping list")
+    st.write("Here is your updated shopping list with ", len(shop_list_def), "items:")
+    st.write(shop_list_def)
 
 
-
-# graph the pipeline 231637 and diets
-# link1 = "https://github.com/nico-stan/recipes/blob/main/images/Pipeline.png"
-# st.image(link1, caption= 'Recipe Pipeline', width=350)
+# graph the pipeline 231637 and diets
+# link1 = "https://github.com/nico-stan/recipes/blob/main/images/Pipeline.png"
+# st.image(link1, caption= 'Recipe Pipeline', width=350)
 
 # link2 = "https://github.com/nico-stan/recipes/blob/main/images/Restrictions.png"
-# st.image(link2, caption= '# Recipes by Restriction', width=350)
+# st.image(link2, caption= '# Recipes by Restriction', width=350)
 
 # Show the map with the nearest grocery stores to buy the shop_list
-# link3 = "https://github.com/nico-stan/recipes/blob/main/images/Map.png"
+# link3 = "https://github.com/nico-stan/recipes/blob/main/images/Map.png"
 # st.image(link3, caption= '# Recipes by Restriction', width=350)
