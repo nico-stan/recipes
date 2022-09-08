@@ -29,7 +29,7 @@ This project was initially developed in the queries jupyter notebook and most of
 
 
 ## Results
-The public (work in progress) version of this tool can be found through this link in [Streamlit](https://nico-stan-recipes-streamlitstreamlit-rv1vwn.streamlitapp.com/) 
+The public (work in progress) version of this tool can be found through this link in [Streamlit](https://nico-stan-recipes-streamlitstreamlit-orde6n.streamlitapp.com/) 
 
 Here is what the results look like through the local version of this page:
 ![Local (working) version](https://github.com/nico-stan/recipes/blob/main/images/1.png)
