@@ -3,7 +3,7 @@ import numpy as np             # Generate empty lists
 import pandas as pd            # Read the csv as df
 import warnings                # Makes it readable without 'errors'
 warnings.filterwarnings("ignore")
-from src.recipes import restrict, realfooder, picky_eater, n_of_recipes, nutrition_values #Functions to filter the df
+from src.recipes import * #Functions to filter the df
 import streamlit as st # Create and populate a website
 
 st.set_page_config(page_title="Recipe Generator", page_icon="🥗", layout='centered', initial_sidebar_state='auto')
@@ -22,18 +22,10 @@ st.markdown("<h1 style='text-align: center; color: white; font-size: +4'>Are you
 st.write("<h1 style='text-align: center; color: white; font-size: large'>Let's get started!</h1>", unsafe_allow_html=True)            
 
 # importing the df
-
-df = pd.read_csv('data/recipes.csv')
-df.drop(columns='Unnamed: 0', inplace=True) #index=False
-df.tags = df.tags.map(lambda x: ast.literal_eval(x))
-df.steps = df.steps.map(lambda x: ast.literal_eval(x))
-df.ingredients = df.ingredients.map(lambda x: ast.literal_eval(x))
-df.nutrition = df.nutrition.map(lambda x: ast.literal_eval(x))
+df = pd.read_pickle('https://raw.githubusercontent.com/nico-stan/recipes/main/data/recipes.csv.pkl')
+df.drop(columns='id', inplace=True)
 df.nutrition.apply(nutrition_values)
-ing_list=[]
-for row in df.ingredients:
-    ing_list+=row
-ing_list = set(ing_list)
+
 
 # Check box for food restrictions
 st.subheader("Food Restrictions")
@@ -55,26 +47,29 @@ else:
 
 # Check box for desired ingredients
 st.subheader("Realfooder")
+#ing_list=[]
+#for row in df.ingredients:
+#    ing_list+=row
+#ing_list = set(ing_list)
 if st.checkbox("Is there any ingredient you really want to include in your recipes?"):
     realfooder = [1, 2, 3]
     realfooder_line = st.radio(
         'How many ingredients do you want to include in your recipes as must-haves?',
-        realfooder)
-     
+        realfooder)     
 #    if realfooder_line == 1:
 #        ing = st.text_input("Enter the name of the ingredient")
-#        df3 = realfooder(df, ing_list, ing)
+#        df3 = realfooder(df2, ing_list, ing)
 #    elif realfooder_line == 2:
 #        ing1 = st.text_input("Enter the name of the 1st ingredient")
 #        ing2 = st.text_input("Enter the name of the 2nd ingredient")       
-#        df3 = realfooder(df, ing_list, ing1, ing2)
+#        df3 = realfooder(df2, ing_list, ing1, ing2)
 #    elif realfooder_line == 3:
 #        ing1 = st.text_input("Enter the name of the 1st ingredient")
 #        ing2 = st.text_input("Enter the name of the 2nd ingredient")
 #        ing3 = st.text_input("Enter the name of the 3rd ingredient")     
-#        df3 = realfooder(df, ing_list, ing1, ing2, ing3)
-# else:
-#    df3 = realfooder(df, ing_list)
+#        df3 = realfooder(df2, ing_list, ing1, ing2, ing3)
+#else:
+#    df3 = realfooder(df2, ing_list)
 
 
 # Check box for undesired ingredients
@@ -113,6 +108,8 @@ shop_list = list(set(shop_list))
 shop_list.sort()
 st.write("Here is your shopping list with ", len(shop_list), "items:")
 st.write(shop_list)
+
+
 
 # graph the pipeline 231637 and diets
 # link1 = "https://github.com/nico-stan/recipes/blob/main/images/Pipeline.png"
