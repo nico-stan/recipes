@@ -8,7 +8,6 @@ def restrict(df, *args):
     based on up to the 5 restrictions that are created: dairy, gluten, nuts, vegan, vegetarian.
     It is done this way at it is significantly faster than iterating over the ingredients list and manual lists.
     '''
-    
     if len(args)==0:
         return df
     elif len(args)==1:
@@ -64,7 +63,7 @@ def n_of_recipes (n, k):
 
     if type(n)==int and type(k)==int and n>0 and k>0:
         if k<n:
-            return rd.sample(range(n), k=10)
+            return rd.sample(range(n), k)
         else:
             print(f'There are only {n} recipes in this database')
             return range(n)
